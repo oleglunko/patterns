@@ -3,13 +3,13 @@ package ru.oleglunko.patterns.creational.factorymethod;
 public class Main {
 
     public static void main(String[] args) {
-        DeveloperFactory developerFactory = createDeveloperBySpecialty(Specialty.PYTHON);
+        DeveloperFactory developerFactory = createFactoryBySpecialty(Specialty.PYTHON);
         Developer developer = developerFactory.createDeveloper();
 
         developer.writeCode();
     }
 
-    private static DeveloperFactory createDeveloperBySpecialty(Specialty specialty) {
+    private static DeveloperFactory createFactoryBySpecialty(Specialty specialty) {
         if (specialty.name().equalsIgnoreCase("java")) {
             return new JavaDeveloperFactory();
         } else if (specialty.name().equalsIgnoreCase("python")) {
